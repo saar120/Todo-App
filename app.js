@@ -4,6 +4,9 @@ const input = document.querySelector("input");
 let tempEdit;
 
 addBtn.addEventListener("click", addTodo);
+window.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") addTodo();
+});
 todosContainer.addEventListener("click", (e) => {
   checkRemoveEdit(e);
 });
@@ -62,13 +65,13 @@ function checkRemoveEdit(e) {
     editInput.type = "text";
     editInput.classList.add("todo-editable");
     editInput.value = currentBtn.textContent;
-    console.log(tempEdit.textContent);
     //replace todo with edit box
     currentBtn.parentElement.replaceChild(editInput, currentBtn);
     editInput.focus();
   }
   // save item
   if (currentBtn.classList.contains("todo-editable")) {
+    if (currentBtn.value == "") return;
     // re assign data
     tempEdit.textContent = currentBtn.value;
     currentBtn.parentElement.replaceChild(tempEdit, currentBtn);
