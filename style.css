@@ -10,6 +10,10 @@
   font-family: "Outfit", sans-serif;
 }
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--main-color);
 }
 h3 {
@@ -25,6 +29,8 @@ h3 {
   border-radius: 30px;
   margin: 3rem;
   background-color: var(--secondery-color);
+  width: 70%;
+  padding: 2rem;
 }
 
 .btn {
@@ -34,13 +40,14 @@ h3 {
   border: none;
   background-color: var(--third-color);
   color: var(--secondery-color);
+  margin: 0.2rem;
+  cursor: pointer;
 }
 
 .submit-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex-direction: column; */
   width: 60%;
 }
 input {
@@ -61,4 +68,41 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  width: 100%;
+}
+
+.todos {
+  margin: 1rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.todo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.todo,
+.todo-editable {
+  font-size: 1.2rem;
+  background-color: var(--main-color);
+  color: var(--third-color);
+  border-radius: 40px;
+  padding: 0.5rem 0;
+  width: calc(100% - 6rem);
+  cursor: pointer;
+  text-align: center;
+  margin: 0.2rem;
+}
+
+.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+i {
+  pointer-events: none;
 }
